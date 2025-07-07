@@ -3,7 +3,7 @@ This repository contains a collection of n8n automation templates sourced from t
 
 👉 [Join n8n and start automating now! 💎](https://n8n.partnerlinks.io/h1pwwf5m4toe)
 <a href="https://n8n.partnerlinks.io/h1pwwf5m4toe">
-  <img src="/img/n8n.png" alt="n8n" style="max-height: 300px;">
+  <img src="img/n8n.png" alt="n8n" style="max-height: 300px;">
 </a>
 
 
