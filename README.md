@@ -1,1 +1,4 @@
-<a href="https://github.com/enescingoz/awesome-n8n-templates" target="_blank">awesome n8n templates</a>
+awesome n8n templates[https://github.com/enescingoz/awesome-n8n-templates]
+
+
+
