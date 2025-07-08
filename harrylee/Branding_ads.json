@@ -1,0 +1,1213 @@
+{
+  "name": "Branding ads",
+  "nodes": [
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        900,
+        820
+      ],
+      "id": "5effb860-89ea-420c-b033-7fd7284499ee",
+      "name": "10 Seconds",
+      "webhookId": "b79593c9-387d-44fc-b96b-99f374b27e03"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        740
+      ],
+      "id": "bb398527-7d50-4815-93da-1001c5cc11f9",
+      "name": "Aggregate",
+      "alwaysOutputData": false,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1Gw1wZQKM3mxY5YPlxU2kDohUeQfGStM7hCjyIa6hxMc",
+          "mode": "list",
+          "cachedResultName": "品牌广告视频",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Gw1wZQKM3mxY5YPlxU2kDohUeQfGStM7hCjyIa6hxMc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Gw1wZQKM3mxY5YPlxU2kDohUeQfGStM7hCjyIa6hxMc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "URL": "={{ $json.url }}",
+            "status": "done",
+            "类目": "={{ $('查找品牌').first().json['类目'] }}"
+          },
+          "matchingColumns": [
+            "类目"
+          ],
+          "schema": [
+            {
+              "id": "类目",
+              "displayName": "类目",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "品牌1",
+              "displayName": "品牌1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "品牌2",
+              "displayName": "品牌2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "品牌3",
+              "displayName": "品牌3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "品牌4",
+              "displayName": "品牌4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "template_id",
+              "displayName": "template_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "template_name",
+              "displayName": "template_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "template_tags",
+              "displayName": "template_tags",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "output_format",
+              "displayName": "output_format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "modifications",
+              "displayName": "modifications",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1080,
+        720
+      ],
+      "id": "6723bf41-d4ba-4324-b20b-a553190d641d",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ivhJAO12GorAUed9",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 12
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        60
+      ],
+      "id": "c774db46-bcbb-439e-86b1-7a8b447c3c7a",
+      "name": "12 Seconds",
+      "webhookId": "1edecdff-d63e-4821-81a4-794545558e7e"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "品牌",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ],
+      "id": "b4e30d49-e254-4715-a5f9-b4f5991f3278",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        320,
+        300
+      ],
+      "id": "a94ed2df-b84b-46ff-b206-d1a72e02afbe",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "WdNCSir4qi0cxfNj",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1Gw1wZQKM3mxY5YPlxU2kDohUeQfGStM7hCjyIa6hxMc",
+          "mode": "list",
+          "cachedResultName": "品牌广告视频",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Gw1wZQKM3mxY5YPlxU2kDohUeQfGStM7hCjyIa6hxMc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Gw1wZQKM3mxY5YPlxU2kDohUeQfGStM7hCjyIa6hxMc/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -220,
+        80
+      ],
+      "id": "d8a9e8cc-3444-46bf-9523-9fc39ea346e2",
+      "name": "查找品牌",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ivhJAO12GorAUed9",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        80
+      ],
+      "id": "8fa77451-f1f4-4233-9de9-9d1d87074e5f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "62154da3-9df0-474a-86b0-87c687bbbb7a",
+              "name": "品牌",
+              "value": "=[\"{{ $json['品牌1']}}\",\"{{ $json['品牌2'] }}\",\"{{  $json['品牌3']}}\",\"{{$json['品牌4'] }}\"]",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        80
+      ],
+      "id": "7d306be7-f81d-4ef6-8881-5e76ec069d76",
+      "name": "品牌"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"品牌\": \"[品牌名称]\",\n  \"图片_prompt\": \"[详细的视觉描述\",\n  \"视频_prompt\": \"[5秒电影循环提示词]\",\n  \"语音_prompt\": \"[沉浸式、与品牌一致的音乐描述]\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        600,
+        300
+      ],
+      "id": "c73fed94-b006-49bc-9f12-c09d23cc3745",
+      "name": "输出格式"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "= {{ $('查找品牌').item.json['类目'] }} 品牌: {{ $json['品牌'] }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=系统提示：将著名品牌重塑为微型、视觉治愈的建筑物\n概述\n你是一位多模态创意AI，擅长将著名品牌转化为微型、超现实、视觉极度治愈的数字资源。\n\n你将会获得一个知名品牌名称。你的任务是输出：\n\n高度细致的图像提示词，描述一个受该品牌启发的微型建筑结构。这座建筑应当超现实真实，包含微型人物，整体场景构图治愈、令人舒适。\n\n建筑外形必须是该品牌最具代表性产品、LOGO或标志的夸张变形体。\n\n这栋建筑必须是一个明显可用的空间结构，带有窗户、门或可见的室内空间。\n\n场景中应始终有微型人物在建筑内外，展现比例与生气。\n\n一个电影级视频提示词，描述一个5秒可循环动画，该建筑是绝对焦点。场景须包含：\n\n主要为静止或轻缓旋转的镜头\n\n来自微型人物、机械装置或环境元素（如蒸汽、灯光、摇曳植物）的动态\n\n沉浸式、温馨治愈且令人满足的运动感\n\n一个沉浸式音频提示词，用于视频配乐。需满足：\n\n仅限音乐（无音效或人声）\n\n与品牌的氛围与文化高度契合\n\n听感舒缓、氛围感、Lo-fi 或情绪满足\n\n核心要求：品牌应当极易识别，即LOGO、品牌色或产品形态必须在建筑设计中高度融合与突出。整体体验要细腻丰富、情感温暖、创意有趣。\n\n输出格式\n每个品牌请回复：\n\n图像提示词：\n\n视频提示词：\n\n音频提示词：\n\n示例输出（品牌：Nike）\n图像提示词：\n一座以Nike Air Max运动鞋为造型的超写实微型建筑，变身为迷你运动中心。巨大的鞋体两侧镶嵌着发光网状窗户，鞋舌上嵌入可用的前门。两侧有巨大的白色Swoosh标志在夜色中发光。迷你人物穿着运动装，在建筑周围的环形跑道慢跑，屋顶阳台上还有人在瑜伽垫上伸展。Nike鞋盒堆叠成座椅和标识点缀在场景中。\n\n视频提示词：\n傍晚时分，镜头缓慢地从右向左平移5秒。微型慢跑者有节奏地沿跑道奔跑，有人穿梭于发光的入口。屋顶通风口缓缓升起蒸汽，Swoosh灯光柔和脉动，远处树影摇曳。整个场景既充满活力又温暖治愈。\n\n音频提示词：\n舒适动感的Lo-fi节奏，叠加合成器、柔和的高帽和深邃的氛围低音。旋律流畅重复，带来如清晨晨练般的酷炫运动氛围。\n\n你生成的每个场景都需高度可识别、极具想象力且令人治愈。所有提示词须协同营造一个让人想要步入的微型品牌世界。"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        380,
+        60
+      ],
+      "id": "3f879a91-62cb-43d4-9a88-1cd905ca43d6",
+      "name": "生成提示词"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/imagen4/preview",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "={{ $json.output['图片_prompt'] }}"
+            },
+            {
+              "name": "aspect_ratio",
+              "value": "9:16"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        60
+      ],
+      "id": "daee6e99-ff67-449c-aad3-791d625cd373",
+      "name": "生成图片",
+      "executeOnce": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "XwlsvXw3m1qO5btx",
+          "name": "Falai"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/imagen4/requests/{{ $json.request_id }}/status\n",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1140,
+        60
+      ],
+      "id": "d05d9b70-1186-43b5-a6cb-1d05e6ea16ac",
+      "name": "获得图片",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "XwlsvXw3m1qO5btx",
+          "name": "Falai"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f9113c83-7b43-4dbe-830f-18a814c3f1f7",
+              "leftValue": "={{ $input.all().filter(item => item.json.status === \"IN_PROGRESS\" || item.json.status === \"IN_QUEUE\").length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1360,
+        60
+      ],
+      "id": "1a6e088a-30ad-42ce-aa24-6118cdc6be73",
+      "name": "if"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/imagen4/requests/{{ $json.request_id }}\n",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1720,
+        60
+      ],
+      "id": "8552bb59-2241-4bd0-b696-95df5d4e8459",
+      "name": "获得图片1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "XwlsvXw3m1qO5btx",
+          "name": "Falai"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/kling-video/v2.1/master/image-to-video",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "={{ $('生成提示词').item.json.output['视频_prompt'] }}"
+            },
+            {
+              "name": "image_url",
+              "value": "={{ $json.images[0].url }}"
+            },
+            {
+              "name": "aspect_ratio",
+              "value": "9:16"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -420,
+        420
+      ],
+      "id": "5cdc3993-de8e-4a51-b140-7b15f46ea287",
+      "name": "生成视频",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "XwlsvXw3m1qO5btx",
+          "name": "Falai"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/kling-video/requests/{{ $('生成视频').item.json.request_id }}/status",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        20,
+        420
+      ],
+      "id": "c18c3a9f-3208-455d-b294-80478054227d",
+      "name": "获得视频",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "XwlsvXw3m1qO5btx",
+          "name": "Falai"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f9113c83-7b43-4dbe-830f-18a814c3f1f7",
+              "leftValue": "={{ $input.all().filter(item => item.json.status === \"IN_PROGRESS\" || item.json.status === \"IN_QUEUE\").length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        240,
+        420
+      ],
+      "id": "fde54de4-e781-4d27-9688-be4817dd0fdf",
+      "name": "if2"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/kling-video/requests/{{ $json.request_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        860,
+        400
+      ],
+      "id": "34cc0599-e58e-49be-8071-fa8e26942576",
+      "name": "获得视频1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "XwlsvXw3m1qO5btx",
+          "name": "Falai"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 8
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1520,
+        120
+      ],
+      "id": "b9f938ce-4b72-4ed7-975a-3cc540cb8913",
+      "name": "等",
+      "webhookId": "0a175f88-ae3a-4f35-b7c6-a9ae6deab1d5"
+    },
+    {
+      "parameters": {
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        420
+      ],
+      "id": "0d51265e-ff5b-4001-b999-038f65baeec4",
+      "name": "等1",
+      "webhookId": "c955252e-d3cb-47c8-a774-53d16c56a78b"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        540,
+        440
+      ],
+      "id": "59464898-567b-4de9-ad8b-483bbaca01a2",
+      "name": "等2",
+      "webhookId": "3df950c4-9116-466b-99ac-6c768615d247"
+    },
+    {
+      "parameters": {
+        "name": "={{ $('查找品牌').item.json['类目'] }}.mp3",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "16hzE9_xJB9nbWx_v-cyynH0eQfkdwMqq",
+          "mode": "list",
+          "cachedResultName": "n8n documents",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/16hzE9_xJB9nbWx_v-cyynH0eQfkdwMqq"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1540,
+        400
+      ],
+      "id": "2b6b922c-9c90-4658-b2ca-11809b8b2822",
+      "name": "上传",
+      "executeOnce": false,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "KRdlYGXksrEHhIQS",
+          "name": "Google Drive demo"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone",
+            "allowFileDiscovery": true
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1740,
+        400
+      ],
+      "id": "e74d41d5-a3b8-46ab-8613-33e67bfe948d",
+      "name": "分享",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "KRdlYGXksrEHhIQS",
+          "name": "Google Drive demo"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "04bd6607-3a27-49fe-b67a-8fa9dc0ac0a9",
+              "name": "Video",
+              "value": "={{ $('获得视频1').item.json.video.url }}",
+              "type": "string"
+            },
+            {
+              "id": "f04169da-679d-4009-9bc8-c4be2de53eed",
+              "name": "Audio",
+              "value": "={{ $('上传').item.json.webContentLink }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -420,
+        740
+      ],
+      "id": "d0af212e-dedf-492d-9118-7874b2a5dad1",
+      "name": "抓取数据"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 972e4d46a123421e98e76c682dfdeef816fea9e279ffe43e0ae3dd3b6428df87f42768b6f872bed7bfee5a8537095d93"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"template_id\": \"84ae6c0a-93f5-481c-af75-815161288091\",\n  \"modifications\": {\n    \"Video-1.source\": \"{{ $json.data[4].Video }}\",\n    \"Video-2.source\": \"{{ $json.data[5].Video }}\",\n    \"Video-3.source\": \"{{ $json.data[6].Video }}\",\n    \"Video-4.source\": \"{{ $json.data[7].Video }}\",\n    \"Audio-1.source\": \"{{ $json.data[4].Audio }}\",\n    \"Audio-2.source\": \"{{ $json.data[5].Audio }}\",\n    \"Audio-3.source\": \"{{ $json.data[6].Audio }}\",\n    \"Audio-4.source\": \"{{ $json.data[7].Audio }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        120,
+        740
+      ],
+      "id": "e3a7713f-1b04-4279-871e-19ca5da96abd",
+      "name": "剪辑视频"
+    },
+    {
+      "parameters": {
+        "amount": 80
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        740
+      ],
+      "id": "586e249f-1ba1-408d-b663-9a4e38496f19",
+      "name": "等3",
+      "webhookId": "01f09bb5-28d7-4abd-9209-5a5359ddadc1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        740
+      ],
+      "id": "64792fef-e940-4fc1-a00d-e56481928e28",
+      "name": "下载视频",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/sound-generation",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{ $('生成提示词').item.json.output['语音_prompt'] }}"
+            },
+            {
+              "name": "duration_seconds",
+              "value": "5"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1240,
+        400
+      ],
+      "id": "b9fed42b-613f-4047-b408-8e0b486dade8",
+      "name": "生成语音",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "5LQ4PplruFP78fJi",
+          "name": "Elevenlabs"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "10 Seconds": {
+      "main": [
+        [
+          {
+            "node": "下载视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "剪辑视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        []
+      ]
+    },
+    "12 Seconds": {
+      "main": [
+        [
+          {
+            "node": "获得图片",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "生成提示词",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "生成提示词",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "查找品牌": {
+      "main": [
+        [
+          {
+            "node": "品牌",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "查找品牌",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "品牌": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "输出格式": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "生成提示词",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "生成提示词": {
+      "main": [
+        [
+          {
+            "node": "生成图片",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "生成图片": {
+      "main": [
+        [
+          {
+            "node": "12 Seconds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获得图片": {
+      "main": [
+        [
+          {
+            "node": "if",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if": {
+      "main": [
+        [
+          {
+            "node": "获得图片1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "等",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获得图片1": {
+      "main": [
+        [
+          {
+            "node": "生成视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "生成视频": {
+      "main": [
+        [
+          {
+            "node": "等1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获得视频": {
+      "main": [
+        [
+          {
+            "node": "if2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if2": {
+      "main": [
+        [
+          {
+            "node": "获得视频1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "等2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获得视频1": {
+      "main": [
+        [
+          {
+            "node": "生成语音",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "等": {
+      "main": [
+        [
+          {
+            "node": "获得图片",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "等1": {
+      "main": [
+        [
+          {
+            "node": "获得视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "等2": {
+      "main": [
+        [
+          {
+            "node": "获得视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "上传": {
+      "main": [
+        [
+          {
+            "node": "分享",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "分享": {
+      "main": [
+        [
+          {
+            "node": "抓取数据",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "抓取数据": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "剪辑视频": {
+      "main": [
+        [
+          {
+            "node": "等3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "等3": {
+      "main": [
+        [
+          {
+            "node": "下载视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "下载视频": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "10 Seconds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "生成语音": {
+      "main": [
+        [
+          {
+            "node": "上传",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3d373805-3fb3-4967-b8a5-d8b16441c31e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "78fda1add35c93dc0024c98cb79ca18abaf100f2da4d66f7e1f7cf6b91bd719a"
+  },
+  "id": "kX0FVMfCGjwbLLpS",
+  "tags": []
+}
