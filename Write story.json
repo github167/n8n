@@ -1,0 +1,167 @@
+{
+  "name": "Write story",
+  "nodes": [
+    {
+      "parameters": {
+        "chunkSize": 500,
+        "chunkOverlap": 300,
+        "options": {}
+      },
+      "id": "e818f648-5d4e-45b0-9a38-7bdbc311e242",
+      "name": "Recursive Character Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "position": [
+        460,
+        200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chunkingMode": "advanced",
+        "options": {
+          "summarizationMethodAndPrompts": {
+            "values": {
+              "summarizationMethod": "stuff",
+              "prompt": "=Create a captivating short tale for kids, whisking them away to magical lands brimming with wisdom. Explore diverse themes in a fun and simple way, weaving in valuable messages. Dive into cultural adventures with lively language that sparks curiosity. Let your story inspire young minds through enchanting narratives that linger long after the last word. Begin crafting your imaginative tale now! (Approximately 900 characters)\n\n\n\"{{ $json.message.text }}\"\n\nCONCISE SUMMARY: "
+            }
+          }
+        }
+      },
+      "id": "5f6abf58-7083-4402-a437-65bcc82e58a9",
+      "name": "Create a story",
+      "type": "@n8n/n8n-nodes-langchain.chainSummarization",
+      "position": [
+        260,
+        0
+      ],
+      "executeOnce": true,
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.response.text }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "6bb11d79-65de-4bae-bc49-f856f0857cf8",
+      "name": "Send Story Text",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        660,
+        0
+      ],
+      "typeVersion": 1.1,
+      "webhookId": "717f67ee-aabd-4545-bff3-b2295ae53f56",
+      "credentials": {
+        "telegramApi": {
+          "id": "P3FOxTRC1IvsWXLq",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "mistralai/mistral-small-3.1-24b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        240,
+        200
+      ],
+      "id": "ab1e3b88-3fd3-41e3-9424-dd4fe7d5e934",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Ov1IPDxvuo1FMfBQ",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "7b90c13b-e828-4cc7-80c8-2f1c9065fa1a",
+      "name": "Telegram Trigger",
+      "webhookId": "fc5e2f50-7462-4d42-873e-d18b0fb42a03",
+      "credentials": {
+        "telegramApi": {
+          "id": "P3FOxTRC1IvsWXLq",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Create a story": {
+      "main": [
+        [
+          {
+            "node": "Send Story Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Create a story",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Create a story",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Create a story",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d87174ec-981a-4e52-b277-25dc8e2c5bf2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3e9206ee2cba30f211c27114fb1b75664392fd95d11884b811d36817e3c1bccd"
+  },
+  "id": "XaOj5uMPJmKitdVo",
+  "tags": []
+}
