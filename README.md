@@ -16,7 +16,9 @@ Ken Kai does AI [https://www.youtube.com/@kenkaidoesai/videos]\
 AI Workshop [https://www.youtube.com/@AI-GPTWorkshop/videos]\
 n8n [https://www.youtube.com/@n8n-io/videos]\
 AI Foundations [https://www.youtube.com/@ai-foundations/videos]\
+AI学长小林 [https://www.youtube.com/@linbintalk/videos]\
 more later...
+
 
 
 
