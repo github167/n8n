@@ -6,7 +6,7 @@ info:
   version: 0.1.36
 
 servers:
-  - url: http://xxlocalhost:11434/api
+  - url: http://localhost:11434/api
     description: Ollama server URL
   - url: http://ollama-host:11434/api
     description: Ollama server URL
