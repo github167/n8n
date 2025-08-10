@@ -8,6 +8,8 @@ info:
 servers:
   - url: http://localhost:11434/api
     description: Ollama server URL
+  - url: http://ollama-host:11434/api
+    description: Ollama server URL
 
 tags:
   - name: Completions
